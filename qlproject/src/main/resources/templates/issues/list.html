@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center><h3>List issues</h3></center>
+<table>
+    <tr>
+        <th>issusesName</th>
+        <th>content</th>
+        <th>status</th>
+        <th>start Time</th>
+        <th>end Time</th>
+        <th>Work name</th>
+        <th>Account</th>
+    </tr>
+    <tr th:each="issuess : ${issues}">
+        <td th:text="${issuess.issuesName}"></td>
+        <td th:text="${issuess.content}"></td>
+        <td th:text="${issuess.status}"></td>
+        <td th:text="${issuess.startTime}"></td>
+        <td th:text="${issuess.endTime}"></td>
+        <td th:text="${issuess.idwork.workName}"></td>
+        <td th:text="${issuess.account.fullName}"></td>
+    </tr>
+    <td></td>
+</table>
+
+</body>
+</html>
