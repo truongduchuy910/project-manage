@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Đăng ký</h2>
+<form action="/sigup" method="post" th:object="${account}">
+    <p>nhập thông tin cá nhân của bạn</p>
+    <label>Account Name:</label>
+    <input th:field="*{accountName}" type="text">
+    <br>
+    <label>Password:</label>
+    <input th:field="*{password}" type="password">
+    <br>
+    <label>full Name:</label>
+    <input th:field="*{fullName}" type="text">
+    <br>
+    <label>Age:</label>
+    <input th:field="*{age}" type="number">  <br>
+    <label>Phone:</label>
+    <input th:field="*{phone}" type="text">  <br>
+    <label>Email:</label>
+    <input th:field="*{email}" type="text">  <br>
+    <label>Birthday:</label>
+    <input th:field="*{birthday}" type="date">  <br>
+    <button type="submit">submit</button>
+</form>
+
+</body>
+</html>

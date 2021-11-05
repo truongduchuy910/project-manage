@@ -1,11 +1,10 @@
 package com.example.qlproject.reporitory;
 
 import com.example.qlproject.model.Account;
+import com.example.qlproject.model.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface AccountRepository extends JpaRepository<Account, String> {
+import java.util.List;
 
-     Account findAllByAccountName(String accountName);
-
-
+public interface RoleRepository extends JpaRepository<Role, Integer> {
 }

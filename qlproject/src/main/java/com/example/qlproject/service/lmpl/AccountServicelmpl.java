@@ -26,11 +26,11 @@ public class AccountServicelmpl implements AccountService {
 
     @Override
     public void delete(String accountName) {
-
+        this.accountRepository.deleteById(accountName);
     }
 
     @Override
     public void create(Account account) {
-
+        this.accountRepository.save(account);
     }
 }

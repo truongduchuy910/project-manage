@@ -23,7 +23,6 @@ public class WorkController {
 //    IssuesService issuesService;
 
 
-
     @GetMapping("/work/list")
     public ResponseEntity<Object> allIssues(@RequestBody(required = false) Work work) {
         List<Work> workList = workService.finAll();
@@ -42,14 +41,14 @@ public class WorkController {
         if (workEdit == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        workEdit= work;
+        workEdit = work;
         this.workService.create(workEdit);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @GetMapping("/work/delete/{id}")
     public ResponseEntity<Object> deleteIssues(@PathVariable int id) {
-        Work workDelete= workService.findById(id);
+        Work workDelete = workService.findById(id);
         if (workDelete == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {

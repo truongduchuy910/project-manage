@@ -1,7 +1,6 @@
 package com.example.qlproject.model;
 
 import javax.persistence.*;
-import java.sql.Struct;
 import java.util.Set;
 
 @Entity
@@ -11,6 +10,7 @@ public class Role {
     @Column(name = "idRole")
 
     private  int id;
+
     private  String roleName;
 
     @ManyToMany(mappedBy = "role", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
@@ -22,6 +22,14 @@ public class Role {
     public Role(int id, Set<Account> account) {
         this.id = id;
         this.account = account;
+    }
+
+    public String getRoleName() {
+        return roleName;
+    }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
     }
 
     public int getId() {
