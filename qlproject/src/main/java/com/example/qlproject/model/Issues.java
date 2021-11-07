@@ -15,13 +15,13 @@ public class Issues {
      private  String startTime;
      private String endTime;
 
-    @ManyToOne(targetEntity = Work.class)
-    @JoinColumn(name = "idWork", referencedColumnName = "idWork")
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "idWork", nullable = false)
     private Work idwork;
 
-    @OneToOne(cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
-    @JoinColumn(name = "accountName",referencedColumnName = "accountName")
-    private Account account;
+//    @OneToOne(cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
+//    @JoinColumn(name = "accountName",referencedColumnName = "accountName")
+//    private Account account;
 
     public Issues() {
     }
@@ -82,11 +82,11 @@ public class Issues {
         this.idwork = idwork;
     }
 
-    public Account getAccount() {
-        return account;
-    }
-
-    public void setAccount(Account account) {
-        this.account = account;
-    }
+//    public Account getAccount() {
+//        return account;
+//    }
+//
+//    public void setAccount(Account account) {
+//        this.account = account;
+//    }
 }

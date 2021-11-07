@@ -14,8 +14,6 @@ import org.thymeleaf.model.ICDATASection;
 import java.util.List;
 
 @RestController
-
-
 public class WorkController {
     @Autowired
     WorkService workService;
@@ -23,19 +21,19 @@ public class WorkController {
 //    IssuesService issuesService;
 
 
-    @GetMapping("/work/list")
+    @GetMapping("/works/list")
     public ResponseEntity<Object> allIssues(@RequestBody(required = false) Work work) {
         List<Work> workList = workService.finAll();
         return new ResponseEntity<>(workList, HttpStatus.OK);
     }
 
-    @PostMapping("/work/create")
+    @PostMapping("/works/create")
     public ResponseEntity<Void> createIssues(@RequestBody(required = false) Work work) {
         this.workService.create(work);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @GetMapping("/work/edit/{id}")
+    @GetMapping("/works/edit/{id}")
     public ResponseEntity<Object> eidtIssues(@PathVariable int id, @RequestBody(required = false) Work work) {
         Work workEdit = workService.findById(id);
         if (workEdit == null) {
@@ -46,7 +44,7 @@ public class WorkController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @GetMapping("/work/delete/{id}")
+    @GetMapping("/works/delete/{id}")
     public ResponseEntity<Object> deleteIssues(@PathVariable int id) {
         Work workDelete = workService.findById(id);
         if (workDelete == null) {

@@ -15,7 +15,7 @@ public class ProjectServicelmpl  implements ProjectService {
 
     @Override
     public List<Project> finAll() {
-        return projectRepository.findAll();
+        return projectRepository.finAdll1();
     }
 
     @Override

@@ -2,6 +2,7 @@ package com.example.qlproject.service;
 
 import com.example.qlproject.model.Account;
 import com.example.qlproject.model.Project;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 

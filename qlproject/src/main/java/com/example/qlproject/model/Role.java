@@ -13,15 +13,15 @@ public class Role {
 
     private  String roleName;
 
-    @ManyToMany(mappedBy = "role", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Set<Account> account;
+//    @ManyToMany(mappedBy = "role", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//    private Set<Account> account;
 
     public Role() {
     }
 
     public Role(int id, Set<Account> account) {
         this.id = id;
-        this.account = account;
+//        this.account = account;
     }
 
     public String getRoleName() {
@@ -40,11 +40,11 @@ public class Role {
         this.id = id;
     }
 
-    public Set<Account> getAccount() {
-        return account;
-    }
-
-    public void setAccount(Set<Account> account) {
-        this.account = account;
-    }
+//    public Set<Account> getAccount() {
+//        return account;
+//    }
+//
+//    public void setAccount(Set<Account> account) {
+//        this.account = account;
+//    }
 }

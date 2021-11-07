@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/issues")
 public class IssuesController {
     @Autowired
     IssuesService issuesService;
@@ -23,19 +22,19 @@ public class IssuesController {
 //    @Autowired
 //    WorkService workService;
 
-    @GetMapping("/list")
+    @GetMapping("/issues/list")
     public ResponseEntity<Object> allIssues(@RequestBody Issues issues) {
         List<Issues> issuesList = issuesService.finAll();
         return new ResponseEntity<>(issuesList, HttpStatus.OK);
     }
 
-    @PostMapping("/create")
+    @PostMapping("/issues/create")
     public ResponseEntity<Void> createIssues(@RequestBody Issues issues) {
         this.issuesService.create(issues);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @GetMapping("/edit/{id}")
+    @GetMapping("/issues/edit/{id}")
     public ResponseEntity<Object> editIssues(@PathVariable int id, @RequestBody Issues issues) {
         Issues issuesEdit = issuesService.findById(id);
         if (issuesEdit == null) {
@@ -46,7 +45,7 @@ public class IssuesController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @GetMapping("/delete/{id}")
+    @GetMapping("/issues/delete/{id}")
     public ResponseEntity<Object> deleteIssues(@PathVariable int id) {
         Issues issuesDelete = issuesService.findById(id);
         if (issuesDelete == null) {
