@@ -13,12 +13,14 @@ public class Work {
     private String startTime;
     private String endTime;
     private String status;
-    @ManyToOne(targetEntity = Project.class)
-    @JoinColumn(name = "idProject", referencedColumnName = "idProject")
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "idProject", nullable = false)
     private Project project;
+//    @JoinColumn(name = "idProject", referencedColumnName = "idProject")
 
-    @OneToMany(mappedBy = "idwork", cascade = CascadeType.ALL)
-    private Set<Issues> id_issues;
+//
+//    @OneToMany(mappedBy = "idwork", cascade = CascadeType.ALL)
+//    private Set<Issues> id_issues;
 
     public Work() {
     }
@@ -31,7 +33,7 @@ public class Work {
         this.endTime = endTime;
         this.status = status;
         this.project = project;
-        this.id_issues = id_issues;
+//        this.id_issues = id_issues;
     }
 
     public int getIdWork() {
@@ -89,12 +91,12 @@ public class Work {
     public void setProject(Project project) {
         this.project = project;
     }
-
-    public Set<Issues> getId_issues() {
-        return id_issues;
-    }
-
-    public void setId_issues(Set<Issues> id_issues) {
-        this.id_issues = id_issues;
-    }
+//
+//    public Set<Issues> getId_issues() {
+//        return id_issues;
+//    }
+//
+//    public void setId_issues(Set<Issues> id_issues) {
+//        this.id_issues = id_issues;
+//    }
 }

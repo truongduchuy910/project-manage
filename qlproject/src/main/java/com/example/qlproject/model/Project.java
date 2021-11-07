@@ -15,8 +15,8 @@ public class Project {
     @JoinColumn(name = "accountName", referencedColumnName = "accountName")
     private Account account;
 
-    @OneToMany(mappedBy = "project", cascade = CascadeType.ALL)
-    private Set<Work> idWork;
+//    @OneToMany(mappedBy = "project", cascade = CascadeType.ALL)
+//    private Set<Work> idWork;
 
     public Project() {
     }
@@ -26,7 +26,7 @@ public class Project {
         this.projectName = projectName;
         this.color = color;
         this.account = account;
-        this.idWork = idWork;
+//        this.idWork = idWork;
     }
 
     public int getIdProject() {
@@ -61,11 +61,11 @@ public class Project {
         this.account = account;
     }
 
-    public Set<Work> getIdWork() {
-        return idWork;
-    }
-
-    public void setIdWork(Set<Work> idWork) {
-        this.idWork = idWork;
-    }
+//    public Set<Work> getIdWork() {
+//        return idWork;
+//    }
+//
+//    public void setIdWork(Set<Work> idWork) {
+//        this.idWork = idWork;
+//    }
 }

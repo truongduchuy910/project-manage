@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/j_spring_security_check}" method="post">
+    <div th:if="${#request.getParameter('error') == 'true'}"
+         style="color:red;margin:10px 0px;">
+        Đăng Nhập Thất Bại!!!<br/>
+        vui lòng kiểm tra lại tên hoặc mật khẩu!
+    </div>
+    <h2>Đăng Nhập</h2>
+    <label>Tên tài khoản:</label>
+    <input name="accountname" type="text">
+    <br>
+    <label>Mật khẩu :</label>
+    <input name="password" type="password">
+    <button type="submit">Đăng Nhập</button>
+    <br>
+    <a href="/sigup">Nếu chưa có tài khoản. Hãy đăng ký tài khoản mới!</a>
+</form>
+
+
+</body>
+</html>
